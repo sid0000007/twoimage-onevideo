@@ -24,9 +24,9 @@ export function ExportControls({
       <div className="space-y-4">
         <div className="text-sm text-gray-600 space-y-1">
           <p>• Video Duration: 4 seconds</p>
-          <p>• Frame Rate: 16 FPS</p>
+          <p>• Frame Rate: 48 FPS</p>
           <p>• Format: H.264 MP4</p>
-          <p>• Pattern: A → B → A → B (1 second each)</p>
+          <p>• Pattern: Fast ping-pong (switches every 0.125s, 32 total switches)</p>
         </div>
 
         {exportProgress && <ProgressIndicator progress={exportProgress} />}
