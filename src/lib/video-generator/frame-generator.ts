@@ -8,12 +8,12 @@ export function generateFrameSequence(
   const frames: Frame[] = [];
 
   for (let i = 0; i < VIDEO_CONFIG.frameCount; i++) {
-    // Ping-pong pattern: 8 frames A, 8 frames B, repeat
-    // Frame 0-7: Image A (0ms - 875ms)
-    // Frame 8-15: Image B (1000ms - 1875ms)
-    // Frame 16-23: Image A (2000ms - 2875ms)
-    // Frame 24-31: Image B (3000ms - 3875ms)
-    const isImageA = Math.floor(i / 8) % 2 === 0;
+    // Ping-pong pattern: 16 frames A, 16 frames B, repeat
+    // Frame 0-15: Image A (0ms - 937.5ms)
+    // Frame 16-31: Image B (1000ms - 1937.5ms)
+    // Frame 32-47: Image A (2000ms - 2937.5ms)
+    // Frame 48-63: Image B (3000ms - 3937.5ms)
+    const isImageA = Math.floor(i / 16) % 2 === 0;
     const sourceImage = isImageA ? imageA : imageB;
 
     frames.push({

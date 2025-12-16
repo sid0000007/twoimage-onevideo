@@ -26,7 +26,7 @@ export class FFmpegEncoder {
     });
 
     try {
-      const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.6/dist/esm";
+      const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd";
       await this.ffmpeg.load({
         coreURL: await toBlobURL(
           `${baseURL}/ffmpeg-core.js`,
@@ -41,8 +41,14 @@ export class FFmpegEncoder {
       this.loaded = true;
       console.log("FFmpeg loaded successfully");
     } catch (error) {
-      console.error("Failed to load FFmpeg:", error);
-      throw new Error("Failed to load FFmpeg");
+      console.error("Failed to load FFmpeg - Full error:", error);
+      console.error("Error details:", {
+        message: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+      });
+      throw new Error(
+        `Failed to load FFmpeg: ${error instanceof Error ? error.message : String(error)}`
+      );
     }
   }
 

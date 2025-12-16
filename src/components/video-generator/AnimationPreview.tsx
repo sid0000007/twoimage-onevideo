@@ -74,7 +74,7 @@ export function AnimationPreview({
         </div>
 
         <div className="text-center text-sm text-gray-600">
-          <p>8 FPS ping-pong animation • 4 seconds • 32 frames</p>
+          <p>16 FPS ping-pong animation • 4 seconds • 64 frames</p>
           {processedImages.some((img) => img.letterboxed) && (
             <p className="text-yellow-700 mt-2">
               ⚠ Letterboxing applied due to different aspect ratios

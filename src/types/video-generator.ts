@@ -24,9 +24,9 @@ export interface ProcessedImage {
 }
 
 export interface VideoConfig {
-  fps: 8;
+  fps: 16;
   duration: 4;
-  frameCount: 32;
+  frameCount: 64;
   codec: "libx264";
   pixelFormat: "yuv420p";
 }
@@ -53,11 +53,11 @@ export interface VideoGeneratorState {
 }
 
 export const VIDEO_CONFIG: VideoConfig = {
-  fps: 8,
+  fps: 16,
   duration: 4,
-  frameCount: 32,
+  frameCount: 64,
   codec: "libx264",
   pixelFormat: "yuv420p",
 };
 
-export const FRAME_DURATION_MS = 125;
+export const FRAME_DURATION_MS = 62.5;
